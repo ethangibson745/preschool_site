@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>{{ home_title }}</h1>
+<p>{{ home_paragraph }}</p>
+
+{% if home_image %}
+    <img src="{{ home_image }}" alt="Home Image" class="main-image">
+{% else %}
+    <p>No image found</p>
+{% endif %}
+
+{% endblock %}
+
