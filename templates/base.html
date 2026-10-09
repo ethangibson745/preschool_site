@@ -2,25 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hopscotch Preschool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-<nav class="navbar">
-    <img src="{{ url_for('static', filename='images/logo.jpg') }}" class="logo">
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/curriculum">Curriculum</a></li>
-        <li><a href="/gallery">Gallery</a></li>
-        <li><a href="/contact">Contact</a></li>
-    </ul>
-</nav>
+    <header class="header">
+        <div class="logo-area">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo">
+            <h1>Hopscotch Preschool</h1>
+        </div>
 
-<div class="content">
-    {% block content %}{% endblock %}
-</div>
+        <nav class="nav">
+            <a href="/" class="{{ 'active' if active_page=='home' else '' }}">Home</a>
+            <a href="/about" class="{{ 'active' if active_page=='about' else '' }}">About</a>
+            <a href="/curriculum" class="{{ 'active' if active_page=='curriculum' else '' }}">Curriculum</a>
+            <a href="/gallery" class="{{ 'active' if active_page=='gallery' else '' }}">Gallery</a>
+            <a href="/contact" class="{{ 'active' if active_page=='contact' else '' }}">Contact</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Hopscotch Preschool</p>
+    </footer>
 
 </body>
 </html>

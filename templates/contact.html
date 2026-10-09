@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>{{ contact_title }}</h1>
+<div class="card">
+    <h1>{{ contact_title }}</h1>
 
-<p><strong>Email:</strong> {{ contact_email }}</p>
-<p><strong>Phone:</strong> {{ contact_phone }}</p>
-<p><strong>Address:</strong> {{ contact_address }}</p>
+    <p><strong>Email:</strong> {{ contact_email }}</p>
+    <p><strong>Phone:</strong> {{ contact_phone }}</p>
+    <p><strong>Address:</strong> {{ contact_address }}</p>
+</div>
 
 {% endblock %}
