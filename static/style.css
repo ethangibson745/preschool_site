@@ -7,7 +7,7 @@
 
 /* BODY */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     background: #faf7f2;
     color: #333;
     line-height: 1.6;
@@ -28,9 +28,10 @@ body {
 }
 
 .logo-area img {
-    width: 65px;
+    width: 70px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 /* NAVIGATION */
@@ -46,7 +47,7 @@ body {
     color: #333;
     padding: 10px 16px;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 999px;
     font-weight: bold;
     transition: 0.25s;
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
@@ -70,6 +71,12 @@ body {
     padding: 0 20px;
 }
 
+.content h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 0.03em;
+}
+
 /* RESPONSIVE IMAGES */
 img {
     max-width: 100%;
@@ -82,8 +89,14 @@ img {
     background: #fff;
     padding: 25px;
     border-radius: 14px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     margin-bottom: 25px;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
 }
 
 /* GRID LAYOUTS */
@@ -105,6 +118,7 @@ h1 {
 
 p {
     font-size: clamp(15px, 3.5vw, 19px);
+    margin-bottom: 10px;
 }
 
 /* FOOTER */
@@ -116,7 +130,7 @@ p {
     box-shadow: 0 -3px 10px rgba(0,0,0,0.08);
 }
 
-/* CONTACT PAGE — SNAPPY UPGRADE */
+/* CONTACT PAGE */
 .contact-card {
     padding: 25px;
     border-radius: 14px;
@@ -130,6 +144,12 @@ p {
     display: flex;
     align-items: center;
     gap: 12px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 8px;
+}
+
+.contact-item:last-of-type {
+    border-bottom: none;
 }
 
 .contact-icon {
@@ -142,10 +162,10 @@ p {
     margin-top: 25px;
     overflow: hidden;
     border-radius: 14px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.18);
 }
 
-/* LOCATION BOX (optional extra section) */
+/* LOCATION BOX */
 .location-box {
     margin-top: 25px;
     padding: 18px;
@@ -170,7 +190,7 @@ p {
     text-decoration: underline;
 }
 
-/* GALLERY IMAGES */
+/* GALLERY */
 .gallery-image {
     border-radius: 12px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.12);
@@ -182,7 +202,7 @@ p {
     transform: scale(1.03);
 }
 
-/* MOBILE TWEAKS */
+/* MOBILE */
 @media (max-width: 600px) {
     .nav {
         flex-direction: column;
