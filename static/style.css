@@ -7,7 +7,7 @@
 
 /* BODY */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background: #faf7f2;
     color: #333;
     line-height: 1.6;
@@ -16,8 +16,9 @@ body {
 /* HEADER */
 .header {
     background: #ffe8b5;
-    padding: 20px;
+    padding: 25px;
     border-bottom: 3px solid #f7d48b;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
 }
 
 .logo-area {
@@ -27,14 +28,14 @@ body {
 }
 
 .logo-area img {
-    width: 60px;
+    width: 65px;
     height: auto;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 /* NAVIGATION */
 .nav {
-    margin-top: 15px;
+    margin-top: 18px;
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
@@ -43,15 +44,17 @@ body {
 .nav a {
     text-decoration: none;
     color: #333;
-    padding: 8px 14px;
+    padding: 10px 16px;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: bold;
-    transition: 0.2s;
+    transition: 0.25s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .nav a:hover {
     background: #f7d48b;
+    transform: translateY(-2px);
 }
 
 .nav a.active {
@@ -63,7 +66,7 @@ body {
 .content {
     width: 100%;
     max-width: 900px;
-    margin: 30px auto;
+    margin: 35px auto;
     padding: 0 20px;
 }
 
@@ -77,71 +80,84 @@ img {
 /* CARDS */
 .card {
     background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    margin-bottom: 25px;
 }
 
 /* GRID LAYOUTS */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
 /* TEXT */
 h1, h2, h3 {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+    font-weight: bold;
 }
 
 h1 {
-    font-size: clamp(26px, 5vw, 40px);
+    font-size: clamp(28px, 5vw, 42px);
 }
 
 p {
-    font-size: clamp(14px, 3.5vw, 18px);
+    font-size: clamp(15px, 3.5vw, 19px);
 }
 
 /* FOOTER */
 .footer {
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     background: #ffe8b5;
-    margin-top: 40px;
+    margin-top: 50px;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.08);
 }
 
+/* CONTACT PAGE — SNAPPY UPGRADE */
 .contact-card {
-    padding: 20px;
-    border-radius: 12px;
+    padding: 25px;
+    border-radius: 14px;
     background: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
 }
 
 .contact-item {
-    margin: 12px 0;
-    font-size: 1.1rem;
+    margin: 14px 0;
+    font-size: 1.15rem;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .contact-icon {
     color: #2c7be5;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
+/* MAP EMBED */
+.map-embed {
+    margin-top: 25px;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+
+/* LOCATION BOX (optional extra section) */
 .location-box {
-    margin-top: 20px;
-    padding: 15px;
+    margin-top: 25px;
+    padding: 18px;
     background: #f7f9fc;
-    border-radius: 10px;
-    border-left: 4px solid #2c7be5;
+    border-radius: 12px;
+    border-left: 5px solid #2c7be5;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .location-box i {
     color: #2c7be5;
-    margin-right: 8px;
+    margin-right: 10px;
 }
 
 .map-link {
@@ -152,4 +168,29 @@ p {
 
 .map-link:hover {
     text-decoration: underline;
+}
+
+/* GALLERY IMAGES */
+.gallery-image {
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    margin-bottom: 15px;
+    transition: 0.25s;
+}
+
+.gallery-image:hover {
+    transform: scale(1.03);
+}
+
+/* MOBILE TWEAKS */
+@media (max-width: 600px) {
+    .nav {
+        flex-direction: column;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
 }

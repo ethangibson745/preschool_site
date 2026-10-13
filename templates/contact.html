@@ -26,16 +26,17 @@
         {{ contact_address }}
     </p>
 
-    <!-- Location block under address -->
-    <div class="location-box">
-        <i class="fa-solid fa-map"></i>
-        <span>Find us at: <strong>{{ contact_address }}</strong></span>
-        <br>
-        <a class="map-link" 
-           href="https://www.google.com/maps/search/?api=1&query={{ contact_address | urlencode }}" 
-           target="_blank">
-            Open in Google Maps
-        </a>
+    <!-- Map Embed -->
+    <div class="map-embed">
+        <iframe
+            width="100%"
+            height="300"
+            style="border:0; border-radius: 12px;"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q={{ contact_address | urlencode }}&output=embed">
+        </iframe>
     </div>
 
 </div>
