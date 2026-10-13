@@ -1,16 +1,23 @@
+import os
+import requests
 from flask import Flask, render_template
-from sanity import Client
 
 app = Flask(__name__)
 
-client = Client({
-    "projectId": "YOUR_PROJECT_ID",
-    "dataset": "production",
-    "useCdn": False
-})
+SANITY_PROJECT_ID = os.getenv("SANITY_PROJECT_ID", "YOUR_PROJECT_ID")
+SANITY_DATASET = os.getenv("SANITY_DATASET", "production")
+SANITY_TOKEN = os.getenv("SANITY_TOKEN", "YOUR_READ_TOKEN")
 
 def get_content():
-    return client.fetch('*[_type == "content"][0]')
+    url = f"https://{SANITY_PROJECT_ID}.api.sanity.io/v2023-10-10/data/query/{SANITY_DATASET}"
+    query = '*[_type == "content"][0]'
+    params = {"query": query}
+    headers = {"Authorization": f"Bearer {SANITY_TOKEN}"}
+
+    resp = requests.get(url, params=params, headers=headers)
+    resp.raise_for_status()
+    result = resp.json()
+    return result.get("result", {}) or {}
 
 @app.route("/")
 def home():
