@@ -6,8 +6,9 @@
     <p>{{ home_paragraph | replace('\n', '<br>') | safe }}</p>
 
     {% if home_image %}
-    <img src="{{ home_image }}" alt="Home Image" class="home-image">
+    <img src="{{ home_image }}" alt="Home Image">
     {% endif %}
+
 </div>
 
 {% endblock %}
