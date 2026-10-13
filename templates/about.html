@@ -5,7 +5,8 @@
     <h1>{{ about_title }}</h1>
 
     {% if about_paragraph %}
-        <p>{{ about_paragraph }}</p>
+        <p>{{ {{ about_paragraph | replace('\n', '<br>') | safe }}
+ }}</p>
     {% endif %}
 </div>
 

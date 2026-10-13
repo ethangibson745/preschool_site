@@ -11,8 +11,9 @@
 
 {% if contact_extra %}
 <div class="card">
-    <p>{{ contact_extra }}</p>
+    <p>{{ contact_extra | replace('\n', '<br>') | safe }}</p>
 </div>
 {% endif %}
+
 
 {% endblock %}

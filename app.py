@@ -51,7 +51,7 @@ def gallery():
 
 @app.route("/contact")
 def contact():
-    query = '*[_type == "contact"][0]'
+    query = '*[_type == "content"][0]'
     data = client.fetch(query)
 
     return render_template(

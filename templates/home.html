@@ -5,7 +5,8 @@
     <h1>{{ home_title }}</h1>
 
     {% if home_paragraph %}
-        <p>{{ home_paragraph }}</p>
+        <p>{{ {{ home_paragraph | replace('\n', '<br>') | safe }}
+ }}</p>
     {% endif %}
 </div>
 
