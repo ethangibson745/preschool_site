@@ -1,36 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+<div class="header">
+    <div class="logo-area">
+        <img src="/static/logo.png" alt="Logo">
+        <h1>Hopscotch Preschool</h1>
+    </div>
 
-<body>
+    <!-- MOBILE BURGER BUTTON -->
+    <div class="mobile-menu-button">
+        <i class="fa-solid fa-bars"></i>
+    </div>
 
-    <header class="header">
-        <div class="logo-area">
-            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo">
-            <h1>Hopscotch Preschool</h1>
-        </div>
+    <!-- DESKTOP NAV -->
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Contact</a>
+    </div>
 
-        <nav class="nav">
-            <a href="/" class="{{ 'active' if active_page=='home' else '' }}">Home</a>
-            <a href="/about" class="{{ 'active' if active_page=='about' else '' }}">About</a>
-            <a href="/gallery" class="{{ 'active' if active_page=='gallery' else '' }}">Gallery</a>
-            <a href="/contact" class="{{ 'active' if active_page=='contact' else '' }}">Contact</a>
-        </nav>
-    </header>
-
-    <main class="content">
-        {% block content %}{% endblock %}
-    </main>
-
-    <footer class="footer">
-        <p>© 2026 Hopscotch Preschool</p>
-    </footer>
-
-</body>
-</html>
+    <!-- MOBILE DROPDOWN NAV -->
+    <div class="mobile-nav">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Contact</a>
+    </div>
+</div>
+<script>
+document.querySelector('.mobile-menu-button').onclick = function() {
+    document.querySelector('.mobile-nav').classList.toggle('open');
+};
+</script>
