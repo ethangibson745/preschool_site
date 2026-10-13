@@ -100,6 +100,13 @@ body {
     letter-spacing: 0.03em;
 }
 
+/* RESPONSIVE IMAGES */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* CARDS */
 .card {
     background: #fff;
@@ -276,7 +283,7 @@ p {
     transform: scale(1.03);
 }
 
-/* DESKTOP HEADER FIX */
+/* DESKTOP HEADER FIX — SMALLER ELEMENTS */
 @media (min-width: 900px) {
 
     .logo-area img {
