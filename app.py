@@ -64,9 +64,36 @@ def curriculum():
 @app.route("/gallery")
 def gallery():
     data = get_content()
-    gallery_urls = [
-        build_image_url(img) for img in data.get("gallery_images", [])
-    ]
+    raw_images = data.get("gallery_images", [])
+
+    gallery_urls = []
+
+    for item in raw_images:
+        # Skip nulls
+        if not item:
+            continue
+
+        # Case: item is a direct image object
+        if isinstance(item, dict) and "asset" in item:
+            url = build_image_url(item)
+            if url:
+                gallery_urls.append(url)
+            continue
+
+        # Case: item is an object containing an image field
+        if isinstance(item, dict) and "image" in item and "asset" in item["image"]:
+            url = build_image_url(item["image"])
+            if url:
+                gallery_urls.append(url)
+            continue
+
+        # Case: item is a string _ref
+        if isinstance(item, str) and item.startswith("image-"):
+            fake_obj = {"asset": {"_ref": item}}
+            url = build_image_url(fake_obj)
+            if url:
+                gallery_urls.append(url)
+            continue
 
     return render_template(
         "gallery.html",
