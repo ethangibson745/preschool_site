@@ -52,14 +52,7 @@ def about():
         about_paragraph=data.get("about_paragraph", "")
     )
 
-@app.route("/curriculum")
-def curriculum():
-    data = get_content()
-    return render_template(
-        "curriculum.html",
-        curriculum_title=data.get("curriculum_title", ""),
-        curriculum_paragraph=data.get("curriculum_paragraph", "")
-    )
+
 
 @app.route("/gallery")
 def gallery():
