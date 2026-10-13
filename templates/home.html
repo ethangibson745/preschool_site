@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="card">
+<div class="card home-card">
     <h1>{{ home_title }}</h1>
-    <p>{{ home_paragraph | replace('\n', '<br>') | safe }}</p>
 
-    {% if home_image %}
-    <img src="{{ home_image }}" alt="Home Image">
-    {% endif %}
-
+    <div class="home-intro">
+        {% if home_image %}
+        <img src="{{ home_image }}" alt="Home Image" class="home-image">
+        {% endif %}
+        <p>{{ home_paragraph | replace('\n', '<br>') | safe }}</p>
+    </div>
 </div>
+
+<div class="section-divider"></div>
 
 {% endblock %}

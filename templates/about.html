@@ -3,7 +3,12 @@
 
 <div class="card">
     <h1>{{ about_title }}</h1>
-    <p>{{ about_paragraph | replace('\n', '<br>') | safe }}</p>
+
+    <div class="about-section">
+        <p>{{ about_paragraph | replace('\n', '<br>') | safe }}</p>
+    </div>
 </div>
+
+<div class="section-divider"></div>
 
 {% endblock %}

@@ -1,10 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
+
 <div class="card">
     <h1>{{ gallery_title }}</h1>
 
-    {% for img in gallery_images %}
-        <img src="{{ img }}" class="gallery-image">
-    {% endfor %}
+    <div class="gallery-grid">
+        {% for img in gallery_images %}
+        <div class="gallery-item">
+            <img src="{{ img }}" class="gallery-image">
+        </div>
+        {% endfor %}
+    </div>
 </div>
+
+<div class="section-divider"></div>
+
 {% endblock %}
