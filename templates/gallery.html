@@ -3,14 +3,9 @@
 
 <div class="card">
     <h1>{{ gallery_title }}</h1>
-    <p>Take a look at some moments from Hopscotch Preschool.</p>
-</div>
 
-<div class="grid">
-    {% for img in gallery_images %}
-        <div class="card">
-            <img src="{{ img }}" alt="Gallery Image" class="gallery-img">
-        </div>
+    {% for image in gallery_images %}
+        <img src="{{ image.asset._ref }}" alt="Gallery Image" class="gallery-image">
     {% endfor %}
 </div>
 

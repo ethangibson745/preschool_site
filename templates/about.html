@@ -3,11 +3,7 @@
 
 <div class="card">
     <h1>{{ about_title }}</h1>
-
-    {% if about_paragraph %}
-        <p>{{ {{ about_paragraph | replace('\n', '<br>') | safe }}
- }}</p>
-    {% endif %}
+    <p>{{ about_paragraph | replace('\n', '<br>') | safe }}</p>
 </div>
 
 {% endblock %}
