@@ -51,14 +51,14 @@ def gallery():
 
 @app.route("/contact")
 def contact():
-    content = fetch_content()
+    query = '*[_type == "contact"][0]'
+    data = client.fetch(query)
+
     return render_template(
         "contact.html",
-        contact_title=content.get("contact_title"),
-        contact_email=content.get("contact_email"),
-        contact_phone=content.get("contact_phone"),
-        contact_address=content.get("contact_address")
+        contact_title=data.get("contact_title", ""),
+        contact_email=data.get("contact_email", ""),
+        contact_phone=data.get("contact_phone", ""),
+        contact_address=data.get("contact_address", ""),
+        contact_extra=data.get("contact_extra", "")
     )
-
-if __name__ == "__main__":
-    app.run(debug=True)
