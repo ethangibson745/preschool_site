@@ -4,7 +4,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-SANITY_PROJECT_ID = os.getenv("SANITY_PROJECT_ID", "YOUR_PROJECT_ID")
+SANITY_PROJECT_ID = os.getenv("SANITY_PROJECT_ID", "205cf911")
 SANITY_DATASET = os.getenv("SANITY_DATASET", "production")
 SANITY_TOKEN = os.getenv("SANITY_TOKEN", "YOUR_READ_TOKEN")
 
