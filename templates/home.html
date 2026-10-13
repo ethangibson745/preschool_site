@@ -4,20 +4,11 @@
 <div class="card">
     <h1>{{ home_title }}</h1>
 
-    {% if home_paragraph %}
-        <p>{{ {{ home_paragraph | replace('\n', '<br>') | safe }}
- }}</p>
+    <p>{{ home_paragraph | replace('\n', '<br>') | safe }}</p>
+
+    {% if home_image %}
+    <img src="{{ home_image }}" alt="Home Image" class="home-image">
     {% endif %}
 </div>
-
-{% if home_image %}
-<div class="card">
-    <img src="{{ home_image }}" alt="Home Image" class="main-image">
-</div>
-{% else %}
-<div class="card">
-    <p>No image found</p>
-</div>
-{% endif %}
 
 {% endblock %}
