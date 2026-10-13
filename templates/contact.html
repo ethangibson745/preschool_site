@@ -1,20 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="card">
+<div class="card contact-card">
+
     <h1>{{ contact_title }}</h1>
 
-    <p>
-    <strong>Email:</strong>
-    <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>
-</p>
+    <!-- Email -->
+    <p class="contact-item">
+        <i class="fa-solid fa-envelope contact-icon"></i>
+        <strong>Email:</strong>
+        <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>
+    </p>
 
-    <p>
-    <strong>Phone (session time only):</strong>
-    <a href="tel:{{ contact_phone }}">{{ contact_phone }}</a>
-</p>
+    <!-- Phone -->
+    <p class="contact-item">
+        <i class="fa-solid fa-phone contact-icon"></i>
+        <strong>Phone (session time only):</strong>
+        <a href="tel:{{ contact_phone }}">{{ contact_phone }}</a>
+    </p>
 
-    <p><strong>Address:</strong> {{ contact_address }}</p>
+    <!-- Address -->
+    <p class="contact-item">
+        <i class="fa-solid fa-location-dot contact-icon"></i>
+        <strong>Address:</strong>
+        {{ contact_address }}
+    </p>
+
+    <!-- Location block under address -->
+    <div class="location-box">
+        <i class="fa-solid fa-map"></i>
+        <span>Find us at: <strong>{{ contact_address }}</strong></span>
+        <br>
+        <a class="map-link" 
+           href="https://www.google.com/maps/search/?api=1&query={{ contact_address | urlencode }}" 
+           target="_blank">
+            Open in Google Maps
+        </a>
+    </div>
+
 </div>
 
 {% if contact_extra %}

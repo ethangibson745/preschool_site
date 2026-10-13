@@ -110,3 +110,46 @@ p {
     background: #ffe8b5;
     margin-top: 40px;
 }
+
+.contact-card {
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-item {
+    margin: 12px 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-icon {
+    color: #2c7be5;
+    font-size: 1.3rem;
+}
+
+.location-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f7f9fc;
+    border-radius: 10px;
+    border-left: 4px solid #2c7be5;
+}
+
+.location-box i {
+    color: #2c7be5;
+    margin-right: 8px;
+}
+
+.map-link {
+    color: #2c7be5;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+}
