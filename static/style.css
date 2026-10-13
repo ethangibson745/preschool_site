@@ -39,10 +39,9 @@ body {
 }
 
 /* DESKTOP NAV */
-.nav {
-    margin-top: 18px;
+.desktop-nav {
     display: flex;
-    flex-wrap: wrap;
+    margin-top: 18px;
     gap: 12px;
 }
 
@@ -338,12 +337,12 @@ p {
         font-size: 2rem;
     }
 
-    .nav a {
+    .desktop-nav a {
         padding: 12px 20px;
         font-size: 1rem;
     }
 
-    .nav {
+    .desktop-nav {
         margin-top: 20px;
     }
 
@@ -356,7 +355,7 @@ p {
 @media (max-width: 700px) {
 
     /* Hide desktop nav */
-    .nav {
+    .desktop-nav {
         display: none;
     }
 
