@@ -7,12 +7,31 @@
     <div class="gallery-grid">
         {% for img in gallery_images %}
         <div class="gallery-item">
-            <img src="{{ img }}" class="gallery-image">
+            <img src="{{ img }}" class="gallery-image" onclick="openFullscreen(this)">
         </div>
         {% endfor %}
     </div>
 </div>
 
+<!-- FULLSCREEN IMAGE MODAL -->
+<div id="fullscreenModal" class="fullscreen-modal" onclick="closeFullscreen()">
+    <img id="fullscreenImage">
+</div>
+
 <div class="section-divider"></div>
+
+<script>
+function openFullscreen(img) {
+    const modal = document.getElementById("fullscreenModal");
+    const modalImg = document.getElementById("fullscreenImage");
+
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+}
+
+function closeFullscreen() {
+    document.getElementById("fullscreenModal").style.display = "none";
+}
+</script>
 
 {% endblock %}
