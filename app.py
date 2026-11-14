@@ -1,12 +1,17 @@
 import os
 import requests
 from flask import Flask, render_template
+from flask import send_from_directory
 
 app = Flask(__name__)
 
 SANITY_PROJECT_ID = os.getenv("SANITY_PROJECT_ID")
 SANITY_DATASET = os.getenv("SANITY_DATASET")
 SANITY_TOKEN = os.getenv("SANITY_TOKEN")
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('static', 'sitemap.xml')
 
 def get_content():
     url = f"https://{SANITY_PROJECT_ID}.api.sanity.io/v2023-10-10/data/query/{SANITY_DATASET}"
