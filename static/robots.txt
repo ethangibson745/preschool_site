@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hopscotchcastledonnington.duckdns.org/sitemap.xml

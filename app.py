@@ -13,6 +13,10 @@ SANITY_TOKEN = os.getenv("SANITY_TOKEN")
 def sitemap():
     return send_from_directory('static', 'sitemap.xml')
 
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory('static', 'robots.txt')
+
 def get_content():
     url = f"https://{SANITY_PROJECT_ID}.api.sanity.io/v2023-10-10/data/query/{SANITY_DATASET}"
     query = '*[_type == "content"][0]'
