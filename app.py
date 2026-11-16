@@ -9,9 +9,9 @@ SANITY_PROJECT_ID = os.getenv("SANITY_PROJECT_ID")
 SANITY_DATASET = os.getenv("SANITY_DATASET")
 SANITY_TOKEN = os.getenv("SANITY_TOKEN")
 
-@app.route('/sitemap.xml')
+@app.route("/sitemap.xml")
 def sitemap():
-    return send_from_directory('static', 'sitemap.xml')
+    return send_from_directory("static", "sitemap.xml", mimetype="application/xml")
 
 @app.route('/robots.txt')
 def robots():
