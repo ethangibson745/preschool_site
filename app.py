@@ -1,6 +1,6 @@
 import os
 import requests
-from flask import Flask, render_template
+from flask import Flask, render_template, Response, send_from_directory
 
 app = Flask(__name__)
 
@@ -8,7 +8,6 @@ SANITY_PROJECT_ID = os.getenv("SANITY_PROJECT_ID")
 SANITY_DATASET = os.getenv("SANITY_DATASET")
 SANITY_TOKEN = os.getenv("SANITY_TOKEN")
 
-from flask import Response
 
 @app.route("/sitemap.xml")
 def sitemap():
