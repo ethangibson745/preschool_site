@@ -1,7 +1,6 @@
 import os
 import requests
 from flask import Flask, render_template
-from flask import send_from_directory
 
 app = Flask(__name__)
 
@@ -9,9 +8,26 @@ SANITY_PROJECT_ID = os.getenv("SANITY_PROJECT_ID")
 SANITY_DATASET = os.getenv("SANITY_DATASET")
 SANITY_TOKEN = os.getenv("SANITY_TOKEN")
 
+from flask import Response
+
 @app.route("/sitemap.xml")
 def sitemap():
-    return send_from_directory("static", "sitemap.xml", mimetype="application/xml")
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://hopscotchcastledonnington.duckdns.org/</loc>
+  </url>
+  <url>
+    <loc>https://hopscotchcastledonnington.duckdns.org/about</loc>
+  </url>
+  <url>
+    <loc>https://hopscotchcastledonnington.duckdns.org/gallery</loc>
+  </url>
+  <url>
+    <loc>https://hopscotchcastledonnington.duckdns.org/contact</loc>
+  </url>
+</urlset>"""
+    return Response(xml, mimetype="application/xml")
 
 @app.route('/robots.txt')
 def robots():
